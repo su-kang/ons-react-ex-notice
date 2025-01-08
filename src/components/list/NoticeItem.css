@@ -1,0 +1,49 @@
+.noticeItem {
+	display: flex;
+	gap: 15px;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 15px 0px;
+	border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.noticeItem .notice_info {
+	min-width: 120px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-right: auto;
+	flex-grow: 1;
+}
+
+.noticeItem .img_section {
+	width: 150px;
+}
+
+.noticeItem .img_section img {
+	width: 50%;
+}
+
+.noticeItem .info_section {
+	width: 100%;
+}
+
+.noticeItem .info_section .title {
+	font-weight: bold;
+	font-size: 25px;
+	padding: 10px;
+}
+
+.noticeItem .info_section .subinfo {
+	display: flex;
+	justify-content: space-between; /* 양 끝으로 정렬 */
+	align-items: center; /* 수직 중앙 정렬 */
+	font-size: 15px;
+	padding: 10px;
+}
+
+.noticeItem .button_section {
+	margin-left: 0;
+}
