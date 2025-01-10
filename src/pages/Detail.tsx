@@ -4,12 +4,14 @@ import Header from '../components/Header';
 
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import NoticeDetail from '../components/detail/NoticeDetail';
+import { useTitleContext } from '../hooks/TitleContextProvider';
 import { onReadOne } from '../utils/localStorageUtil';
 
 const Detail = () => {
 	const navigate = useNavigate();
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	const id = searchParams.get('id');
+	const { setTitle } = useTitleContext();
 
 	const [noticeData, setNoticeData]: any = useState({});
 
@@ -19,6 +21,7 @@ const Detail = () => {
 
 	useEffect(() => {
 		setNoticeData(onReadOne(id));
+		setTitle('게시판 상세');
 	}, []);
 
 	return (

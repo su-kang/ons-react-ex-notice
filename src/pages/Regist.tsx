@@ -1,20 +1,27 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/button/Button';
 import Header from '../components/Header';
 import NoticeRegist from '../components/regist/NoticeRegist';
+import { useTitleContext } from '../hooks/TitleContextProvider';
 import { onCreate } from '../utils/localStorageUtil';
 
 const Regist = () => {
 	const navigate = useNavigate();
+	const { setTitle } = useTitleContext();
 
 	const onSubmitEvent = (data: any) => {
 		onCreate(data);
 		navigate('/');
 	};
 
+	useEffect(() => {
+		setTitle('게시판 등록');
+	}, []);
+
 	return (
 		<>
-			<Header title="게시글 등록" leftChild={<Button onClick={() => navigate(-1)} text={'< 뒤로 가기'} />} />
+			<Header title="게시판 등록" leftChild={<Button onClick={() => navigate(-1)} text={'< 뒤로 가기'} />} />
 			<NoticeRegist onSubmit={onSubmitEvent} />
 		</>
 	);

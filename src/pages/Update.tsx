@@ -4,6 +4,7 @@ import Button from '../components/button/Button';
 import Header from '../components/Header';
 import NoticeRegist from '../components/regist/NoticeRegist';
 
+import { useTitleContext } from '../hooks/TitleContextProvider';
 import { onDelete, onReadOne, onUpdate } from '../utils/localStorageUtil';
 
 const Update = () => {
@@ -11,6 +12,7 @@ const Update = () => {
 	const params = useParams();
 
 	const [noticeData, setNoticeData] = useState({});
+	const { setTitle } = useTitleContext();
 
 	const onSubmitEvent = (data: any) => {
 		onUpdate(data);
@@ -24,12 +26,13 @@ const Update = () => {
 
 	useEffect(() => {
 		setNoticeData(onReadOne(params.id));
+		setTitle('게시판 수정');
 	}, []);
 
 	return (
 		<>
 			<Header
-				title="게시글 수정"
+				title="게시판 수정"
 				leftChild={<Button onClick={() => navigate(-1)} text={'< 뒤로 가기'} />}
 				rightChild={<Button onClick={onClickDelelte} text={'삭 제'} type="red" />}
 			/>

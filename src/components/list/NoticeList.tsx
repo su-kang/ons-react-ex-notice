@@ -1,22 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { onRead } from '../../utils/localStorageUtil';
 import NoticeItem from './NoticeItem';
 import './NoticeList.css';
 
 const NoticeList = () => {
-	const navigate = useNavigate();
 	const [noticeList, setNoticeList] = useState([]);
 	const [searchParams, setSearchParams] = useState({
 		order: 'desc',
 		title: '',
 		createName: '',
 	});
-
-	// const onClickEvent = () => {
-	// 	console.log('>>> event');
-	// 	navigate('/regist');
-	// };
 
 	const onChangeSelectEvent = (event: any) => {
 		setSearchParams(prev => ({
