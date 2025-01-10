@@ -20,8 +20,10 @@ const Update = () => {
 	};
 
 	const onClickDelelte = () => {
-		onDelete(params.id);
-		navigate('/');
+		if (confirm('게시글을 삭제하시겠습니까?')) {
+			onDelete(params.id);
+			navigate('/');
+		}
 	};
 
 	useEffect(() => {
