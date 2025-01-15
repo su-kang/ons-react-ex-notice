@@ -36,12 +36,7 @@ const NoticeRegist = ({ registData, onSubmit }: any) => {
 		}));
 	};
 
-	const onClickRegist = () => {
-		onSubmit(input);
-	};
-
 	useEffect(() => {
-		console.log('data', registData);
 		if (registData !== undefined) {
 			setInput(prev => ({
 				...prev,
@@ -90,7 +85,7 @@ const NoticeRegist = ({ registData, onSubmit }: any) => {
 			</div>
 			<div className="button">
 				<Button text="취소" onClick={() => navigate(-1)} />
-				<Button text="등록" type="green" onClick={onClickRegist} />
+				<Button text="등록" type="green" onClick={() => onSubmit(input)} />
 			</div>
 		</div>
 	);
