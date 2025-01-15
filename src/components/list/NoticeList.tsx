@@ -11,6 +11,10 @@ const NoticeList = () => {
 		createName: '',
 	});
 
+	/**
+	 * select box 변경 이벤트
+	 * @param event
+	 */
 	const onChangeSelectEvent = (event: any) => {
 		setSearchParams(prev => ({
 			...prev,
@@ -19,6 +23,10 @@ const NoticeList = () => {
 		console.log('event', event.target.value);
 	};
 
+	/**
+	 * input 변경 이벤트
+	 * @param event
+	 */
 	const onChangeInputEvent = (event: any) => {
 		let name = event.target.name;
 		let value = event.target.value;

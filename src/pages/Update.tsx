@@ -14,11 +14,18 @@ const Update = () => {
 	const [noticeData, setNoticeData] = useState({});
 	const { setTitle } = useTitleContext();
 
+	/**
+	 * 수정 이벤트
+	 * @param data
+	 */
 	const onSubmitEvent = (data: any) => {
 		onUpdate(data);
 		navigate('/');
 	};
 
+	/**
+	 * 삭제 이벤트
+	 */
 	const onClickDelelte = () => {
 		if (confirm('게시글을 삭제하시겠습니까?')) {
 			onDelete(params.id);

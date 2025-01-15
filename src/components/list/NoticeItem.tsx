@@ -17,10 +17,16 @@ const NoticeItem = ({ item }: Props) => {
 		return info;
 	};
 
+	/**
+	 * 상세 클릭 이벤트
+	 */
 	const onClickDetail = () => {
 		navigate(`/detail?id=${item.id}`);
 	};
 
+	/**
+	 * 수정 버튼 클릭 이벤트
+	 */
 	const onClickUpdate = () => {
 		navigate(`/update/${item.id}`);
 	};

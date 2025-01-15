@@ -15,6 +15,9 @@ const Detail = () => {
 
 	const [noticeData, setNoticeData]: any = useState({});
 
+	/**
+	 * 수정 클릭 이벤트
+	 */
 	const onClickUpdate = () => {
 		navigate(`/update/${id}`);
 	};

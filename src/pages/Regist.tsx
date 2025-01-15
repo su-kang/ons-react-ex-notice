@@ -10,6 +10,10 @@ const Regist = () => {
 	const navigate = useNavigate();
 	const { setTitle } = useTitleContext();
 
+	/**
+	 * 등록 이벤트
+	 * @param data
+	 */
 	const onSubmitEvent = (data: any) => {
 		onCreate(data);
 		navigate('/');

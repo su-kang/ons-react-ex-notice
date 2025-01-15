@@ -18,6 +18,10 @@ const NoticeRegist = ({ registData, onSubmit }: any) => {
 		id: 0,
 	});
 
+	/**
+	 * 아이콘 종류 클릭 이벤트
+	 * @param item
+	 */
 	const onClickItem = (item: any) => {
 		// 데이터 변경
 		setInput(prev => ({
@@ -26,6 +30,10 @@ const NoticeRegist = ({ registData, onSubmit }: any) => {
 		}));
 	};
 
+	/**
+	 * input 변경 이벤트
+	 * @param event
+	 */
 	const onChangeInput = (event: any) => {
 		let name = event.target.name;
 		let value = event.target.value;
