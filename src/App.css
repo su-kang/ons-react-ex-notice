@@ -1,0 +1,7 @@
+.Error {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	color: red;
+	font-weight: bold;
+}
